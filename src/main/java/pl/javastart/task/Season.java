@@ -1,7 +1,5 @@
 package pl.javastart.task;
 
-import java.util.Arrays;
-
 public enum Season {
     SPRING("Wiosna", new String[]{"marzec", "kwiecień", "maj"}),
     SUMMER("Lato", new String[]{"czerwiec", "lipiec", "sierpień"}),
@@ -20,21 +18,16 @@ public enum Season {
         return plSeason;
     }
 
-    public static void showSeasonMonths(String season) {
-        System.out.println("W tej porze roku są następujące miesiące:");
+    public static String[] seasonMonths(String season) {
         switch (season) {
             case "wiosna":
-                System.out.println(Arrays.toString(SPRING.seasonMonths));
-                break;
+                return SPRING.seasonMonths;
             case "lato":
-                System.out.println(Arrays.toString(SUMMER.seasonMonths));
-                break;
+                return SUMMER.seasonMonths;
             case "jesień":
-                System.out.println(Arrays.toString(AUTUMN.seasonMonths));
-                break;
+                return AUTUMN.seasonMonths;
             default:
-                System.out.println(Arrays.toString(WINTER.seasonMonths));
-                break;
+                return WINTER.seasonMonths;
         }
     }
 }
