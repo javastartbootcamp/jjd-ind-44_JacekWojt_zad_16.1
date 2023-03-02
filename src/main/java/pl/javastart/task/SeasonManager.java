@@ -13,7 +13,7 @@ public class SeasonManager {
             System.out.println(season.plTranslation());
         }
         String seasonName = scanner.nextLine().toLowerCase(Locale.ROOT);
-        String[] season = Season.seasonMonths(seasonName);
-        System.out.println("W tej porze roku są następujące miesiące:\n" + Arrays.toString(season));
+        Season season = Season.seasonMonths(seasonName);
+        System.out.println("W tej porze roku są następujące miesiące:\n" + Arrays.toString(season.getSeasonMonths()));
     }
 }

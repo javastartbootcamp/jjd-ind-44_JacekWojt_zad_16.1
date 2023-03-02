@@ -18,16 +18,16 @@ public enum Season {
         return plSeason;
     }
 
-    public static String[] seasonMonths(String season) {
-        switch (season) {
-            case "wiosna":
-                return SPRING.seasonMonths;
-            case "lato":
-                return SUMMER.seasonMonths;
-            case "jesień":
-                return AUTUMN.seasonMonths;
-            default:
-                return WINTER.seasonMonths;
-        }
+    public static Season seasonMonths(String season) {
+        return switch (season) {
+            case "wiosna" -> SPRING;
+            case "lato" -> SUMMER;
+            case "jesień" -> AUTUMN;
+            default -> WINTER;
+        };
+    }
+
+    public String[] getSeasonMonths() {
+        return seasonMonths;
     }
 }
